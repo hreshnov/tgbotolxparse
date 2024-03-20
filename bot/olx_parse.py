@@ -40,7 +40,6 @@ async def olx_parse(base_url, headers):
                     ad_url = ad['href']
                     if not ad_url.startswith('https://www.olx.pl'):
                         ad_url = 'https://www.olx.pl/' + ad_url
-                        print(ad_url)
                     async with session.get(ad_url) as ad_response:
                         ad_html = await ad_response.text()
                         ad_soup = bs(ad_html, 'html.parser')
@@ -62,9 +61,6 @@ async def olx_parse(base_url, headers):
                             city = cities[-2].text
                         else:
                             city = ''
-                        print(city)
-                        print('=' * 200)
-
                         price_da = ad_soup.find('div', {'class': 'css-e2ir3r'})
                         price_text = price_da.find('h3').text.strip() if price_da else 'No price found'
                         price = price_text.strip() if price_text else 'No price found'
