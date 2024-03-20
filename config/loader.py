@@ -1,13 +1,13 @@
 from aiogram import Bot, Dispatcher
 
-from config.config import config
+from config.config import TOKEN
 
 import json
 
 ENGINE = 'sqlite+aiosqlite:///db.sqlite3'
 ECHO = True
 
-bot = Bot(token=config.bot_token.get_secret_value(), parse_mode='HTML')
+bot = Bot(token=TOKEN, parse_mode='HTML')
 dp = Dispatcher()
 
 
