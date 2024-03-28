@@ -59,21 +59,12 @@ async def process_callback_button1(callback_query: CallbackQuery, state: FSMCont
     elif command == 'edit_search_instructions':
         await state.set_state(EditMenuState.waiting_for_edit)
         await state.update_data(editing_field="search_instructions")
-    elif command == 'edit_support':
-        await state.set_state(EditMenuState.waiting_for_edit)
-        await state.update_data(editing_field="support")
-    elif command == 'edit_support_us':
-        await state.set_state(EditMenuState.waiting_for_edit)
-        await state.update_data(editing_field="support_us")
     elif command == 'edit_my_search':
         await state.set_state(EditMenuState.waiting_for_edit)
         await state.update_data(editing_field="my_search")
     elif command == 'edit_all_ads':
         await state.set_state(EditMenuState.waiting_for_edit)
         await state.update_data(editing_field="all_ads")
-    elif command == 'edit_support_proj':
-        await state.set_state(EditMenuState.waiting_for_edit)
-        await state.update_data(editing_field="support_proj")
     elif command == 'edit_add_search':
         await state.set_state(EditMenuState.waiting_for_edit)
         await state.update_data(editing_field="add_search")
