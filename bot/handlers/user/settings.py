@@ -16,11 +16,3 @@ router = Router()
 
 phrases = load_menu()
 
-support_us = phrases['support_us']
-
-
-@router.message(F.text == f"{support_us}")
-async def process_settings(message: Message):
-    phrases = load_menu()
-    support = phrases['support']
-    await message.answer(f"{support}", reply_markup=settings)
