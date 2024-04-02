@@ -16,8 +16,8 @@ from bot.database.models import *
 from bot.handlers.admin import edit_menu
 
 # [IMPORT PARSE FUNC]
-# from bot.olx_parse import olx_parse, BASE_URL, HEADERS
-from bot.otodom_parse import otodom_parse, BASE_URLOTD, HEADERSOTD
+from bot.olx_parse import olx_parse, BASE_URL
+from bot.otodom_parse import otodom_parse, BASE_URLOTD
 
 
 async def main():
@@ -28,8 +28,8 @@ async def main():
         edit_menu.admin,
     )
 
-    # asyncio.create_task(olx_parse(BASE_URL, HEADERS))
-    asyncio.create_task(otodom_parse(BASE_URLOTD, HEADERSOTD))
+    asyncio.create_task(olx_parse(BASE_URL))
+    asyncio.create_task(otodom_parse(BASE_URLOTD))
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
