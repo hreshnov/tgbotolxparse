@@ -32,7 +32,7 @@ HEADERSOTD = {
 BASE_URLOTD = 'https://www.otodom.pl/pl/wyniki/wynajem/mieszkanie/cala-polska'
 
 
-async def otodom_parse(base_urlotd, HEADERSOTD):
+async def otodom_parse(base_urlotd):
     async with aiohttp.ClientSession(headers=HEADERSOTD) as session:
         while True:
             try:

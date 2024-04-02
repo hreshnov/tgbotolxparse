@@ -32,7 +32,7 @@ HEADERS = {
 BASE_URL = 'https://www.olx.pl/nieruchomosci/mieszkania/wynajem/'
 
 
-async def olx_parse(base_url, HEADERS):
+async def olx_parse(base_url):
     async with aiohttp.ClientSession(headers=HEADERS) as session:
         while True:
             try:
